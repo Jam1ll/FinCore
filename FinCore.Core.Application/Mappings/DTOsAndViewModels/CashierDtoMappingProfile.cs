@@ -1,0 +1,25 @@
+﻿using AutoMapper;
+using FinCore.Core.Application.DTOs.Cashier;
+using FinCore.Core.Application.ViewModels.Cashier;
+
+namespace FinCore.Core.Application.Mappings.DTOsAndViewModels
+{
+    public class CashierDtoMappingProfile : Profile
+    {
+        public CashierDtoMappingProfile()
+        {
+            CreateMap<DepositViewModel, DepositDto>().ReverseMap();
+            CreateMap<WithdrawViewModel, WithdrawDto>().ReverseMap();
+            CreateMap<ThirdPartyTransferViewModel, ThirdPartyTransferDto>().ReverseMap();
+            CreateMap<PagoPrestamoViewModel, LoanPaymentByCashierDto>().ReverseMap();
+            CreateMap<PagoTarjetaCreditoViewModel, CreditCardPaymentDto>().ReverseMap();
+
+            // Confirmaciones
+            CreateMap<ConfirmDepositViewModel, DepositDto>();
+            CreateMap<ConfirmWithdrawViewModel, WithdrawDto>();
+            CreateMap<ConfirmThirdPartyTransferViewModel, ThirdPartyTransferDto>();
+            CreateMap<ConfirmPagoPrestamoViewModel, LoanPaymentByCashierDto>();
+            CreateMap<ConfirmPagoTarjetaCreditoViewModel, CreditCardPaymentDto>();
+        }
+    }
+}

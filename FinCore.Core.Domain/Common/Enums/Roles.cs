@@ -1,0 +1,10 @@
+﻿namespace FinCore.Core.Domain.Common.Enums
+{
+    public enum Roles
+    {
+        Admin = 1,
+        Client,
+        Cashier,
+        Commerce
+    }
+}

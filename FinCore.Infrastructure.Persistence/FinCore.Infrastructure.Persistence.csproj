@@ -5,5 +5,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.7" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\FinCore.Core.Domain\FinCore.Core.Domain.csproj" />
+	  <ProjectReference Include="..\FinCore.Infrastructure.Identity\FinCore.Infrastructure.Identity.csproj" />
+	</ItemGroup>
 </Project>
