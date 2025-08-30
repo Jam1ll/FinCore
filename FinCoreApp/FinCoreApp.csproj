@@ -6,4 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FinCore.Core.Application\FinCore.Core.Application.csproj" />
+    <ProjectReference Include="..\FinCore.Core.Domain\FinCore.Core.Domain.csproj" />
+    <ProjectReference Include="..\FinCore.Infrastructure.Identity\FinCore.Infrastructure.Identity.csproj" />
+    <ProjectReference Include="..\FinCore.Infrastructure.Persistence\FinCore.Infrastructure.Persistence.csproj" />
+    <ProjectReference Include="..\FinCore.Infrastructure.Shared\FinCore.Infrastructure.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
