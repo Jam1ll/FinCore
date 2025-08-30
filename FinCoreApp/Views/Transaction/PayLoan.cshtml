@@ -1,0 +1,71 @@
+﻿@model FinCore.Core.Application.DTOs.Transaction.LoanPaymentDto
+
+@{
+    ViewData["Title"] = "Pagar Préstamo";
+    Layout = "_LayoutClient";
+
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="PayLoan" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="SourceAccountNumber" class="form-label"></label>
+                <select asp-for="SourceAccountNumber" asp-items="ViewBag.SourceAccounts" class="form-control">
+                    <option value="">-- Seleccione Cuenta de Origen --</option>
+                </select>
+                <span asp-validation-for="SourceAccountNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="LoanIdentifier" class="form-label"></label>
+                <select asp-for="LoanIdentifier" asp-items="ViewBag.Loans" class="form-control">
+                    <option value="">-- Seleccione Préstamo --</option>
+                </select>
+                <span asp-validation-for="LoanIdentifier" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Amount" class="form-label"></label>
+                <input asp-for="Amount" class="form-control" type="number" step="0.01" min="0.01" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-primary">Realizar Pago de Préstamo</button>
+                <a asp-controller="ClientHome" asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Seleccionar Tipo de Transacción";
+    Layout = "_LayoutClient";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Transacciones</h3>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4">Selecciona el tipo de transacción que deseas realizar:</p>
+
+                    <div class="d-grid gap-3">
+                        <a asp-action="Transfer" asp-controller="Transaction" class="btn btn-outline-primary btn-lg">
+                            <i class="bi bi-arrow-left-right me-2"></i> Transferencia Entre Cuentas
+                        </a>
+
+                        <a asp-action="PayCreditCard" asp-controller="Transaction" class="btn btn-outline-secondary btn-lg">
+                            <i class="bi bi-credit-card-fill me-2"></i> Pago a Tarjeta de Crédito
+                        </a>
+
+                        <a asp-action="PayLoan" asp-controller="Transaction" class="btn btn-outline-warning btn-lg text-dark">
+                            <i class="bi bi-cash-stack me-2"></i> Pago a Préstamo
+                        </a>
+
+                        <a asp-action="PayBeneficiary" asp-controller="Transaction" class="btn btn-outline-success btn-lg">
+                            <i class="bi bi-person-check-fill me-2"></i> Transferencia a Beneficiario
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+}

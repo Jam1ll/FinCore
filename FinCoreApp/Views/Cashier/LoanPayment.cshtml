@@ -1,0 +1,47 @@
+﻿@model FinCore.Core.Application.DTOs.Cashier.LoanPaymentByCashierDto
+
+
+@{
+    Layout = "_LayoutCashier";
+    ViewData["Title"] = "Prestamo";
+}
+
+<h3>Pago a préstamo</h3>
+
+<!-- Mostrar el mensaje de error si existe en TempData -->
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+<!-- Mostrar el mensaje de éxito si existe en TempData -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+<form asp-action="LoanPayment" method="post">
+    <div class="form-group">
+        <label asp-for="SourceAccountNumber"></label>
+        <input asp-for="SourceAccountNumber" class="form-control" />
+        <span asp-validation-for="SourceAccountNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LoanIdentifier"></label>
+        <input asp-for="LoanIdentifier" class="form-control" />
+        <span asp-validation-for="LoanIdentifier" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Continuar</button>
+</form>
+
