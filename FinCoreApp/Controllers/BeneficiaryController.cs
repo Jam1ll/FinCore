@@ -4,8 +4,6 @@ using FinCore.Core.Application.ViewModels.Beneficiary;
 using FinCore.Infrastructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using System.Linq;
 using FinCore.Core.Application.DTOs.Beneficiary;
 
 namespace FinCoreApp.Controllers
